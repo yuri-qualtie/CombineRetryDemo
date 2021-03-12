@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AE0F10B25FB2BD900891967 /* Publisher+retryNoLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE0F10A25FB2BD900891967 /* Publisher+retryNoLeaks.swift */; };
 		DAA9F7B825FA38DB00AAC3CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9F7B725FA38DB00AAC3CC /* AppDelegate.swift */; };
 		DAA9F7BA25FA38DB00AAC3CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9F7B925FA38DB00AAC3CC /* SceneDelegate.swift */; };
 		DAA9F7BC25FA38DB00AAC3CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9F7BB25FA38DB00AAC3CC /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AE0F10A25FB2BD900891967 /* Publisher+retryNoLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+retryNoLeaks.swift"; sourceTree = "<group>"; };
 		DAA9F7B425FA38DB00AAC3CC /* CombineRetryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineRetryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA9F7B725FA38DB00AAC3CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA9F7B925FA38DB00AAC3CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				DAA9F7B725FA38DB00AAC3CC /* AppDelegate.swift */,
 				DAA9F7B925FA38DB00AAC3CC /* SceneDelegate.swift */,
+				4AE0F10A25FB2BD900891967 /* Publisher+retryNoLeaks.swift */,
 				DAA9F7BB25FA38DB00AAC3CC /* ViewController.swift */,
 				DAA9F7BD25FA38DB00AAC3CC /* Main.storyboard */,
 				DAA9F7C025FA38DC00AAC3CC /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE0F10B25FB2BD900891967 /* Publisher+retryNoLeaks.swift in Sources */,
 				DAA9F7BC25FA38DB00AAC3CC /* ViewController.swift in Sources */,
 				DAA9F7B825FA38DB00AAC3CC /* AppDelegate.swift in Sources */,
 				DAA9F7BA25FA38DB00AAC3CC /* SceneDelegate.swift in Sources */,

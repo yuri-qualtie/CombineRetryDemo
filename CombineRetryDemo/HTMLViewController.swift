@@ -14,7 +14,7 @@ class HTMLViewController: UIViewController {
                 URLSession.shared
                     .dataTaskPublisher(for: URL(string: "https://www.example.com/")!)
             }
-            .retry(1)
+            .retryNoLeaks(1)
             .map {
                 String(decoding: $0.data, as: UTF8.self)
             }
