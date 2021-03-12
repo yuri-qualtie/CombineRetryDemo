@@ -1,6 +1,9 @@
 import UIKit
 import Combine
 
+struct SampleError: Error {
+}
+
 class HTMLViewController: UIViewController {
     
     var cancellables = Set<AnyCancellable>()
@@ -8,15 +11,9 @@ class HTMLViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        URLSession.shared
-            .dataTaskPublisher(for: URL(string: "https://www.apple.com/")!)
-            .tryCatch { _ in
-                URLSession.shared
-                    .dataTaskPublisher(for: URL(string: "https://www.example.com/")!)
-            }
-            .retry(1)
-            .map {
-                String(decoding: $0.data, as: UTF8.self)
+        CurrentValueSubject<SampleError, Never>(SampleError())
+            .flatMap { error -> Fail<Void, SampleError> in
+                Fail(error: error)
             }
             .sink(
                 receiveCompletion: { print("completed \($0)") },
