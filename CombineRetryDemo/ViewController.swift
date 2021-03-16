@@ -16,12 +16,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         Just(getFruit)
-            .print("start")
+            .print()
             .map{$0()}
-            .setFailureType(to: FruitError.self)
-            .print("test")
             .flatMap { value -> AnyPublisher<String, FruitError> in
                 print("in flat map \(value)")
                 if value == "apple" {
