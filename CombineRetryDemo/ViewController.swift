@@ -2,29 +2,30 @@ import UIKit
 import Combine
 
 class ViewController: UIViewController {
-    
 
+    var cancellables = Set<AnyCancellable>()
+    
+    enum FruitError: Error {
+        case bad
+    }
+    var fruit = "apple"
+    
+    func getFruit() -> String {
+        fruit
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var cancellables = Set<AnyCancellable>()
-        
-        enum FruitError: Error {
-            case bad
-        }
-        var fruit = "apple"
-        
-        func getFruit() -> String {
-            fruit
-        }
-        
-        Just(getFruit())
-            .print()
+                
+        Just(getFruit)
+            .print("start")
+            .map{$0()}
+            .setFailureType(to: FruitError.self)
+            .print("test")
             .flatMap { value -> AnyPublisher<String, FruitError> in
                 print("in flat map \(value)")
                 if value == "apple" {
-                    fruit = "pineapple"
+                    self.fruit = "pineapple"
                     return Fail(error: FruitError.bad).eraseToAnyPublisher()
                 }
                 return Just("banana").setFailureType(to: FruitError.self).eraseToAnyPublisher()
